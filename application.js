@@ -1,12 +1,13 @@
 $(document).ready(function(){
 var Instagram = {};
 Instagram.Template = {};
+var tag = $('input.search-tag').val();
 
 $(function(){
 	//Bind an event handler to the 'click' event on the form's button
 	$('form#search button').click(function(){
 		//Extract the value of the search input text field
-		var tag = $('input.search-tag').val();
+		//var tag = $('input.search-tag').val();
 
 		//Invoke 'search', passing 'tag'
 		Instagram.search(tag);
@@ -15,24 +16,24 @@ $(function(){
 });
 
 //A very simple function for template parsing
-Instagram.Template.generate = function(template, photo){
+//Instagram.Template.generate = function(template, photo){
 	//Define variable for regular expression
-	var re;
+//	var re;
 
 	//fetch template <-- Do I need this line???
 	//template = Instagram.Template.Views[template];
 
 	//loop through the passed photo object
-	for(var attribute in photo){
+//	for(var attribute in photo){
 		//generate a regular expression???
-		re = new RegExp("{"+attribute+"}","g");
+//		re = new RegExp("{"+attribute+"}","g");
 
 		//Apply the regular expression instance with 'replace'
-		template = template.replace(re ,photo[attribute]);
-	}
+//		template = template.replace(re ,photo[attribute]);
+//	}
 
-	return template;
-};
+//	return template;
+//};
 
 function toTemplate(photo){
 	photo = {
@@ -80,20 +81,10 @@ Instagram.Template.Views = {
   Instagram.search = search;
 })();
 
-Instagram.search('cats');
+//Instagram.search('cats');
 
 
 });
-
-
-
-
-
-
-
-
-
-
 
 
 
